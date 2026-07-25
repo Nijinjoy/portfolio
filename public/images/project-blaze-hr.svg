@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Blaze HR mobile app preview</title>
+  <desc id="desc">A premium HRMS mobile app interface preview for Blaze HR.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset=".55" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset=".55" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#000814" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="960" height="600" fill="url(#bg)"/>
+  <circle cx="170" cy="115" r="170" fill="#2563eb" opacity=".24"/>
+  <circle cx="820" cy="500" r="210" fill="#0ea5e9" opacity=".16"/>
+  <g opacity=".14" stroke="#94a3b8">
+    <path d="M0 120h960M0 240h960M0 360h960M0 480h960"/>
+    <path d="M160 0v600M320 0v600M480 0v600M640 0v600M800 0v600"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="146" y="74" width="668" height="452" rx="42" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <rect x="188" y="118" width="212" height="364" rx="34" fill="#020617" stroke="#38bdf8" stroke-opacity=".45" stroke-width="3"/>
+    <rect x="210" y="146" width="168" height="84" rx="24" fill="url(#accent)"/>
+    <circle cx="252" cy="284" r="34" fill="#38bdf8"/>
+    <rect x="306" y="262" width="52" height="14" rx="7" fill="#cbd5e1" opacity=".72"/>
+    <rect x="306" y="292" width="72" height="12" rx="6" fill="#64748b"/>
+    <rect x="224" y="352" width="140" height="38" rx="16" fill="#111827" stroke="#1e293b"/>
+    <rect x="224" y="414" width="104" height="32" rx="14" fill="#2563eb"/>
+    <rect x="454" y="130" width="286" height="76" rx="24" fill="url(#accent)"/>
+    <rect x="454" y="244" width="126" height="112" rx="24" fill="#111827" stroke="#1e293b"/>
+    <rect x="614" y="244" width="126" height="112" rx="24" fill="#111827" stroke="#1e293b"/>
+    <rect x="454" y="398" width="286" height="52" rx="18" fill="#111827" stroke="#1e293b"/>
+    <path d="M494 308h44M654 308h44M494 424h166" stroke="#94a3b8" stroke-width="14" stroke-linecap="round" opacity=".6"/>
+  </g>
+</svg>

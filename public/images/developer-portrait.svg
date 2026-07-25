@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-labelledby="title desc">
+  <title id="title">Professional mobile developer portrait</title>
+  <desc id="desc">A premium dark technology portrait illustration with app interface panels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset=".48" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset=".55" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+  <rect width="720" height="900" fill="url(#bg)"/>
+  <circle cx="580" cy="160" r="180" fill="#2563eb" opacity=".24" filter="url(#soft)"/>
+  <circle cx="130" cy="720" r="220" fill="#0ea5e9" opacity=".18" filter="url(#soft)"/>
+  <g opacity=".18" stroke="#94a3b8">
+    <path d="M0 160h720M0 320h720M0 480h720M0 640h720M0 800h720"/>
+    <path d="M120 0v900M280 0v900M440 0v900M600 0v900"/>
+  </g>
+  <g transform="translate(72 102)">
+    <rect x="0" y="74" width="210" height="440" rx="34" fill="#020617" stroke="#38bdf8" opacity=".8"/>
+    <rect x="22" y="114" width="166" height="66" rx="18" fill="url(#accent)" opacity=".85"/>
+    <rect x="24" y="210" width="160" height="18" rx="9" fill="#e2e8f0" opacity=".32"/>
+    <rect x="24" y="244" width="126" height="18" rx="9" fill="#e2e8f0" opacity=".22"/>
+    <rect x="24" y="300" width="160" height="132" rx="22" fill="#0f172a" stroke="#334155"/>
+  </g>
+  <g transform="translate(318 164)">
+    <path d="M88 150c-74 18-116 86-108 180l18 214h296l20-216c7-86-48-158-130-178z" fill="#111827"/>
+    <path d="M66 512h238l-16 132c-4 34-32 60-66 60h-74c-34 0-62-26-66-60z" fill="url(#accent)"/>
+    <circle cx="150" cy="108" r="90" fill="#cbd5e1"/>
+    <path d="M54 108c12-68 56-108 124-104 56 4 102 42 108 94-44-18-88-18-132-2-34 12-66 16-100 12z" fill="#0f172a"/>
+    <path d="M72 198c32 54 122 62 168 4 24 22 38 52 44 88-74 42-154 40-238-4 6-36 14-66 26-88z" fill="#334155"/>
+    <rect x="45" y="296" width="224" height="146" rx="26" fill="#020617" stroke="#38bdf8"/>
+    <path d="M82 338h144M82 376h92M82 414h126" stroke="#38bdf8" stroke-width="14" stroke-linecap="round" opacity=".72"/>
+  </g>
+</svg>
