@@ -1,0 +1,26 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" fill="#07111F"/>
+  <rect x="44" y="44" width="872" height="512" rx="36" fill="#0D1B2F" stroke="#1E3A5F" stroke-width="2"/>
+  <circle cx="770" cy="142" r="82" fill="#18A058" fill-opacity="0.24"/>
+  <circle cx="166" cy="456" r="116" fill="#0EA5E9" fill-opacity="0.18"/>
+  <rect x="164" y="82" width="292" height="436" rx="38" fill="#101827" stroke="#334155" stroke-width="8"/>
+  <rect x="190" y="122" width="240" height="356" rx="24" fill="#F8FAFC"/>
+  <rect x="214" y="148" width="122" height="18" rx="9" fill="#0F172A"/>
+  <rect x="214" y="188" width="192" height="94" rx="20" fill="#16A34A"/>
+  <path d="M252 235C252 219.536 264.536 207 280 207H340C355.464 207 368 219.536 368 235C368 250.464 355.464 263 340 263H280C264.536 263 252 250.464 252 235Z" fill="#DCFCE7"/>
+  <circle cx="286" cy="235" r="13" fill="#16A34A"/>
+  <path d="M310 222H336C343.18 222 349 227.82 349 235C349 242.18 343.18 248 336 248H310" stroke="#16A34A" stroke-width="10" stroke-linecap="round"/>
+  <rect x="214" y="306" width="88" height="88" rx="18" fill="#E0F2FE"/>
+  <rect x="318" y="306" width="88" height="88" rx="18" fill="#FEF3C7"/>
+  <path d="M241 350H275M258 333V367" stroke="#0284C7" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="362" cy="350" r="22" fill="#F59E0B"/>
+  <rect x="214" y="418" width="192" height="32" rx="16" fill="#0F172A"/>
+  <rect x="520" y="166" width="242" height="64" rx="18" fill="#13243A" stroke="#244569" stroke-width="2"/>
+  <rect x="548" y="190" width="126" height="16" rx="8" fill="#38BDF8"/>
+  <rect x="520" y="258" width="304" height="64" rx="18" fill="#13243A" stroke="#244569" stroke-width="2"/>
+  <rect x="548" y="282" width="204" height="16" rx="8" fill="#22C55E"/>
+  <rect x="520" y="350" width="262" height="64" rx="18" fill="#13243A" stroke="#244569" stroke-width="2"/>
+  <rect x="548" y="374" width="162" height="16" rx="8" fill="#F59E0B"/>
+  <text x="520" y="126" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="52" font-weight="700">Bsporty</text>
+  <text x="520" y="464" fill="#94A3B8" font-family="Arial, sans-serif" font-size="26">Ground booking and sports accessories</text>
+</svg>

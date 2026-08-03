@@ -3,13 +3,13 @@ import type { NavItem } from "@/types/portfolio";
 export const siteConfig = {
   name: "Nijin Joy",
   role: "Senior Mobile Application Developer",
-  email: "hello@example.com",
-  phone: "+1 555 012 3456",
+  email: "nijinjoy1999@gmail.com",
+  phone: "+971 509050493",
   location: "Available Worldwide",
   url: "https://your-domain.com",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
-  whatsapp: "https://wa.me/15550123456",
+  github: "https://github.com/Nijinjoy",
+  linkedin: "https://www.linkedin.com/in/nijinjoy/",
+  whatsapp: "https://wa.me/971509050493",
   resumeUrl: "/resume.pdf",
   summary:
     "I build scalable, high-performance cross-platform mobile applications with clean architecture, reusable components, modern UI/UX, and optimized performance.",

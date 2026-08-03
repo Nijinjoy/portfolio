@@ -58,7 +58,12 @@ export function ProjectsSection() {
                 className="glass-panel flex h-full flex-col overflow-hidden rounded-3xl"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
-                  <Image src={project.image} alt={`${project.title} app preview`} fill className="object-cover" />
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} app preview`}
+                    fill
+                    className={cn(project.imageFit === "contain" ? "object-contain p-6" : "object-cover")}
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">
@@ -151,7 +156,12 @@ export function ProjectsSection() {
                 </div>
                 <div className="mt-6 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
                   <div className="relative aspect-[16/11] overflow-hidden rounded-2xl bg-slate-900">
-                    <Image src={project.image} alt={`${project.title} architecture preview`} fill className="object-cover" />
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} architecture preview`}
+                      fill
+                      className={cn(project.imageFit === "contain" ? "object-contain p-6" : "object-cover")}
+                    />
                   </div>
                   <div className="grid gap-4">
                     {[

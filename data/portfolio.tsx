@@ -31,9 +31,8 @@ export const typingRoles = [
 
 export const stats = [
   { value: "3+", label: "Years Experience" },
-  { value: "25+", label: "Projects" },
-  { value: "30+", label: "Technologies" },
-  { value: "15+", label: "Happy Clients" },
+  { value: "5", label: "Projects" },
+  { value: "13", label: "Technologies" },
 ];
 
 export const skillGroups: SkillGroup[] = [
@@ -139,15 +138,12 @@ export const projectCategories = [
   "React Native",
   "Flutter",
   "React.js",
-  "ERP",
   "HRMS",
   "CRM",
-  "Expense Management",
-  "Vehicle Tracking",
-  "Healthcare",
+  "Sports",
+  "Restaurant POS",
   "Finance",
   "E-Commerce",
-  "Dating App",
   "Portfolio",
   "Task Management",
 ];
@@ -192,6 +188,39 @@ export const projects: Project[] = [
     },
   },
   {
+    title: "Buy In Minutes",
+    category: "E-Commerce",
+    description:
+      "An independently developed React Native mobile commerce project currently under development for a company, focused on fast buying flows and mobile-first customer experience.",
+    image: "/images/buy-in-minutes.jpeg",
+    imageFit: "contain",
+    techStack: ["React Native", "Mobile App", "E-Commerce", "REST APIs", "Android", "iOS"],
+    features: [
+      "Fast purchase flows",
+      "Product browsing",
+      "Mobile commerce experience",
+      "Independent development in progress",
+    ],
+    links: { caseStudy: "#" },
+    details: {
+      architecture:
+        "React Native app structure with reusable screens, commerce-focused modules, API-connected product flows, and production-oriented mobile navigation.",
+      challenges:
+        "Developing the product independently while aligning company requirements with a smooth, fast shopping experience.",
+      solutions:
+        "Built reusable React Native components, structured the buying flow around quick user actions, and prepared the app foundation for scalable company use.",
+      performance:
+        "Currently focused on responsive screens, efficient navigation, and lightweight interactions for fast mobile ordering.",
+      contributions: [
+        "Independent development",
+        "React Native implementation",
+        "E-commerce flows",
+        "Mobile UI",
+        "Company product development",
+      ],
+    },
+  },
+  {
     title: "Blaze HR",
     category: "HRMS",
     description:
@@ -229,99 +258,72 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "ERP Mobile Suite",
-    category: "ERP",
-    description: "Enterprise-grade mobile ERP companion with approvals, inventory, attendance, and reporting.",
-    image: "/images/project-erp.svg",
-    techStack: ["React Native", "Redux Toolkit", "REST APIs", "Firebase"],
-    features: ["Role-based dashboards", "Offline forms", "Approval workflows", "Push notifications"],
-    links: { demo: "#", caseStudy: "#" },
+    title: "Bsporty",
+    category: "Sports",
+    description:
+      "A sports booking and accessories mobile app published on Google Play as a one-stop solution for ground booking and sports accessories.",
+    image: "/images/bsporty.jpeg",
+    techStack: ["Mobile App", "Sports Booking", "E-Commerce", "Android", "Google Play"],
+    features: [
+      "Ground booking",
+      "Sports accessories",
+      "Mobile-first shopping flows",
+      "Published Android release",
+    ],
+    links: {
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.bsporty.bsporty&pcampaignid=web_share",
+      caseStudy: "#",
+    },
     details: {
-      architecture: "Feature-based modules with typed API clients, reusable form controls, and state slices.",
-      challenges: "Complex approval rules, intermittent connectivity, and large enterprise payloads.",
-      solutions: "Local persistence, optimistic updates, API normalization, and reusable workflow primitives.",
-      performance: "Reduced repeated API calls and improved first meaningful screen render by 38%.",
-      contributions: ["Mobile architecture", "UI system", "API integration", "release hardening"],
+      architecture:
+        "Mobile-first product structure for sports venue discovery, booking flows, accessory browsing, and production Android distribution.",
+      challenges:
+        "Combining booking-oriented sports workflows with shopping-style user journeys while keeping the app simple for everyday customers.",
+      solutions:
+        "Built clear mobile screens for browsing, booking, and commerce actions, with a production-ready Android release flow.",
+      performance:
+        "Focused on responsive mobile interactions, streamlined navigation, and reliable Play Store delivery.",
+      contributions: [
+        "Mobile app development",
+        "Sports booking flows",
+        "Commerce workflows",
+        "Android release",
+        "Play Store publishing",
+      ],
     },
   },
   {
-    title: "HRMS Attendance App",
-    category: "HRMS",
-    description: "Employee self-service app for attendance, leave requests, payroll documents, and announcements.",
-    image: "/images/project-hrms.svg",
-    techStack: ["Flutter", "Firebase", "REST APIs", "Hive"],
-    features: ["Geo attendance", "Leave approvals", "Payslips", "Manager workflows"],
-    links: { playStore: "#", appStore: "#" },
+    title: "ADDON-S POS",
+    category: "Restaurant POS",
+    description:
+      "A React Native restaurant POS billing application for mobile and tablet users, currently used as an APK at a client site for kitchen items and liquor billing.",
+    image: "/images/addon-s-pos.png",
+    techStack: ["React Native", "Mobile App", "Tablet App", "Restaurant POS", "APK"],
+    features: [
+      "Role-based access",
+      "Biller user workflow",
+      "Kitchen user workflow",
+      "Customer display",
+      "Kitchen and liquor item billing",
+    ],
+    links: { caseStudy: "#" },
     details: {
-      architecture: "Clean Flutter layers with repository abstractions and cached domain models.",
-      challenges: "Accurate location capture, battery impact, and permission handling.",
-      solutions: "Permission education, background-safe flows, debounced location checks, and audit logs.",
-      performance: "Optimized local storage and reduced sync time for employee records.",
-      contributions: ["Flutter modules", "location flows", "Firebase integration", "QA automation"],
-    },
-  },
-  {
-    title: "Expense Management",
-    category: "Expense Management",
-    description: "Receipt capture, reimbursement tracking, multi-stage approvals, and finance reporting.",
-    image: "/images/project-expense.svg",
-    techStack: ["React Native", "TypeScript", "SQLite", "REST APIs"],
-    features: ["OCR-ready receipts", "Approval timeline", "Offline drafts", "Finance exports"],
-    links: { github: "#", caseStudy: "#" },
-    details: {
-      architecture: "Offline-first feature slices, typed forms, validation schemas, and sync workers.",
-      challenges: "Draft reliability, attachment uploads, and multi-step status handling.",
-      solutions: "Queued uploads, resumable state, and strict form validation before sync.",
-      performance: "Compressed image payloads and minimized network retries on slow connections.",
-      contributions: ["Data modeling", "forms", "sync strategy", "mobile UX"],
-    },
-  },
-  {
-    title: "Vehicle Tracking Platform",
-    category: "Vehicle Tracking",
-    description: "Live fleet tracking, map views, route history, alerts, and operations dashboards.",
-    image: "/images/project-tracking.svg",
-    techStack: ["React.js", "Next.js", "Maps", "WebSocket"],
-    features: ["Live maps", "Route replay", "Alert center", "Fleet analytics"],
-    links: { demo: "#", github: "#" },
-    details: {
-      architecture: "Map-driven React UI with streaming updates and isolated rendering zones.",
-      challenges: "High-frequency location updates and dense map markers.",
-      solutions: "Batched updates, marker clustering, and selective component memoization.",
-      performance: "Kept dashboards responsive while handling hundreds of live assets.",
-      contributions: ["Frontend architecture", "map performance", "dashboard UX", "API contracts"],
-    },
-  },
-  {
-    title: "Healthcare Booking App",
-    category: "Healthcare",
-    description: "Patient-facing app for doctor discovery, bookings, reminders, and secure records.",
-    image: "/images/project-health.svg",
-    techStack: ["Flutter", "Firebase", "Stripe", "Cloud Functions"],
-    features: ["Doctor search", "Booking calendar", "Payments", "Reminder notifications"],
-    links: { playStore: "#", caseStudy: "#" },
-    details: {
-      architecture: "Flutter app with feature modules, typed models, and service abstractions.",
-      challenges: "Sensitive flows, appointment state, and payment reliability.",
-      solutions: "Explicit state machines, defensive error states, and secure Firebase rules.",
-      performance: "Lazy-loaded appointment screens and optimized image-heavy listings.",
-      contributions: ["Mobile UI", "booking flows", "payment integration", "Firebase rules"],
-    },
-  },
-  {
-    title: "Dating Experience App",
-    category: "Dating App",
-    description: "Premium swipe-based social app with onboarding, discovery, chat, and subscriptions.",
-    image: "/images/project-dating.svg",
-    techStack: ["Flutter", "Provider", "Firebase", "In-App Purchases"],
-    features: ["Swipe cards", "Chat", "Profile setup", "Premium subscriptions"],
-    links: { demo: "#", caseStudy: "#" },
-    details: {
-      architecture: "Presentation widgets separated from domain data and reusable interaction components.",
-      challenges: "Smooth gestures, media-heavy profiles, and subscription state.",
-      solutions: "Optimized image loading, gesture isolation, and clear premium entitlements.",
-      performance: "Reduced frame drops in swipe interactions through stable layout constraints.",
-      contributions: ["UI polish", "animations", "subscription flows", "profile systems"],
+      architecture:
+        "React Native POS structure with separate role-based flows for billers, kitchen users, and customer display screens across mobile and tablet layouts.",
+      challenges:
+        "Supporting real client-site billing operations without a store deployment while keeping billing, kitchen, and display workflows clear for each user role.",
+      solutions:
+        "Built APK-based mobile and tablet flows for billing kitchen items and liquor items, with role-specific screens for front-desk, kitchen, and customer-facing usage.",
+      performance:
+        "Focused on fast billing interactions, readable tablet layouts, and dependable APK usage in the live client environment.",
+      contributions: [
+        "React Native development",
+        "Role-based workflows",
+        "POS billing flows",
+        "Mobile and tablet UI",
+        "Client-site APK usage",
+      ],
     },
   },
 ];

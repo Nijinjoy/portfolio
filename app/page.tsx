@@ -1,8 +1,6 @@
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/common/navbar";
 import { AboutSection } from "@/components/sections/about";
-import { BlogSection } from "@/components/sections/blog";
-import { CertificationsSection } from "@/components/sections/certifications";
 import { ContactSection } from "@/components/sections/contact";
 import { ExperienceSection } from "@/components/sections/experience";
 import { Footer } from "@/components/sections/footer";
@@ -38,8 +36,6 @@ export default function Home() {
         <TechMarquee />
         <ProjectsSection />
         <ServicesSection />
-        <CertificationsSection />
-        <BlogSection />
         <ContactSection />
       </main>
       <Footer />

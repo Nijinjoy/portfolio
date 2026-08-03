@@ -22,6 +22,7 @@ export type Project = {
   category: string;
   description: string;
   image: string;
+  imageFit?: "cover" | "contain";
   techStack: string[];
   features: string[];
   links: Partial<Record<"github" | "demo" | "playStore" | "appStore" | "caseStudy", string>>;

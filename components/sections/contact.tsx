@@ -59,8 +59,8 @@ export function ContactSection() {
                 [Mail, "Email", siteConfig.email, `mailto:${siteConfig.email}`],
                 [Phone, "Phone", siteConfig.phone, `tel:${siteConfig.phone}`],
                 [MapPin, "Location", siteConfig.location, "#"],
-                [Github, "GitHub", "github.com/yourusername", siteConfig.github],
-                [Linkedin, "LinkedIn", "linkedin.com/in/yourusername", siteConfig.linkedin],
+                [Github, "GitHub", "github.com/Nijinjoy", siteConfig.github],
+                [Linkedin, "LinkedIn", "linkedin.com/in/nijinjoy", siteConfig.linkedin],
               ].map(([Icon, label, value, href]) => (
                 <a
                   key={String(label)}
@@ -96,7 +96,7 @@ export function ContactSection() {
                 <input {...register("email")} type="email" autoComplete="email" className="input" placeholder="you@example.com" />
               </Field>
               <Field label="Phone" error={errors.phone?.message}>
-                <input {...register("phone")} type="tel" autoComplete="tel" className="input" placeholder="+1 555 012 3456" />
+                <input {...register("phone")} type="tel" autoComplete="tel" className="input" placeholder="+971 509050493" />
               </Field>
               <div className="hidden sm:block" />
               <Field label="Message" error={errors.message?.message} className="sm:col-span-2">
