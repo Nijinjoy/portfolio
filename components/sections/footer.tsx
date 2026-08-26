@@ -6,8 +6,8 @@ import { navItems, siteConfig } from "@/constants/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 py-8">
-      <div className="container-premium grid gap-6 md:grid-cols-[1fr_1.4fr_0.8fr] md:items-center">
+    <footer className="border-t border-white/10 py-10">
+      <div className="container-premium grid gap-8 md:grid-cols-[1fr_1.4fr_0.8fr] md:items-center">
         <div>
           <a href="#home" className="font-display text-lg font-bold gradient-text">
             Nijin Joy
@@ -23,7 +23,7 @@ export function Footer() {
             <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+        <div className="grid grid-cols-3 justify-items-center gap-2 sm:grid-cols-5 md:justify-items-center">
           {navItems.map((item) => (
             <a
               key={item.href}
