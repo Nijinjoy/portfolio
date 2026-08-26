@@ -14,6 +14,7 @@ import {
   SiSupabase,
   SiTailwindcss,
   SiTypescript,
+  SiVuedotjs,
   SiXcode,
 } from "react-icons/si";
 import { FaApple, FaAws, FaFigma, FaGitAlt, FaGithub, FaGoogle, FaHtml5, FaMeta } from "react-icons/fa6";
@@ -40,6 +41,7 @@ export const skillGroups: SkillGroup[] = [
     title: "Frontend",
     skills: [
       { name: "React.js", level: 92, experience: "3+ years", icon: SiReact },
+      { name: "Vue.js", level: 78, experience: "1+ years", icon: SiVuedotjs },
       { name: "Next.js", level: 86, experience: "2+ years", icon: SiNextdotjs },
       { name: "HTML", level: 95, experience: "3+ years", icon: FaHtml5 },
       { name: "CSS", level: 92, experience: "3+ years", icon: SiTailwindcss },
@@ -89,18 +91,21 @@ export const skillGroups: SkillGroup[] = [
 export const experiences = [
   {
     company: "ADDONS TECHNOLOGIES LLC, Dubai",
-    position: "Mobile Application Developer",
+    position: "Software Engineer",
     duration: "Oct 2025 - Present",
     responsibilities: [
-      "Independently built and deployed Addon-s, an HR and CRM mobile application for Android and iOS.",
+      "Independently built and deployed Addon-s, an HR and CRM mobile application for Android and iOS using React Native.",
+      "Developed companion web applications and admin interfaces with Vue.js.",
+      "Integrated Stripe for in-app payments and Twilio for phone number-based OTP login.",
       "Handled mobile app development, feature implementation, store release preparation, and production deployment.",
       "Built enterprise workflows for HR operations, CRM usage, and mobile-first business processes.",
     ],
     achievements: [
       "Published Addon-s on both Google Play Store and Apple App Store.",
-      "Delivered an end-to-end mobile product independently from implementation through release.",
+      "Delivered an end-to-end mobile and web product independently from implementation through release.",
+      "Shipped secure payment and phone-based authentication flows with Stripe and Twilio.",
     ],
-    technologies: ["Cross-platform Mobile", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
+    technologies: ["React Native", "Vue.js", "Stripe", "Twilio", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
   },
   {
     company: "Impetors Pvt Ltd, Bengaluru",
@@ -153,14 +158,16 @@ export const projects: Project[] = [
     title: "Addon-s",
     category: "CRM",
     description:
-      "An HR and CRM mobile application independently built and deployed for ADDONS TECHNOLOGIES LLC, Dubai on Android and iOS.",
+      "An HR and CRM mobile and web application independently built and deployed for ADDONS TECHNOLOGIES LLC, Dubai — React Native apps on Android and iOS, plus a Vue.js web interface.",
     image: "/images/addons-app.png",
-    techStack: ["Cross-platform Mobile", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
+    techStack: ["React Native", "Vue.js", "Stripe", "Twilio", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
     features: [
       "HR workflows",
       "CRM workflows",
-      "Enterprise mobile features",
-      "Independent Android and iOS deployment",
+      "Stripe payments",
+      "Twilio phone number login",
+      "Enterprise mobile and web features",
+      "Independent Android, iOS, and web deployment",
     ],
     links: {
       playStore:
@@ -170,18 +177,21 @@ export const projects: Project[] = [
     },
     details: {
       architecture:
-        "Enterprise mobile app structure with reusable screens, API-connected modules, and separate HR and CRM feature areas.",
+        "React Native mobile apps paired with a Vue.js web interface, reusable screens, API-connected modules, and separate HR and CRM feature areas.",
       challenges:
-        "Building and releasing a complete business mobile application independently across both Android and iOS stores.",
+        "Building and releasing a complete business mobile and web application independently, including secure payments and phone-based authentication.",
       solutions:
-        "Owned the implementation flow end to end, organized reusable modules, integrated business APIs, and prepared production-ready store builds.",
+        "Owned the implementation flow end to end, integrated Stripe for payments and Twilio for phone number OTP login, organized reusable modules, and prepared production-ready store builds.",
       performance:
         "Focused on stable navigation, clean mobile interactions, efficient API state handling, and release-ready production builds.",
       contributions: [
         "Independent development",
+        "React Native development",
+        "Vue.js web development",
         "HR workflows",
         "CRM workflows",
-        "API integration",
+        "Stripe payment integration",
+        "Twilio phone login integration",
         "Play Store release",
         "App Store release",
       ],
@@ -352,6 +362,7 @@ export const techStack = [
   "React",
   "React Native",
   "Flutter",
+  "Vue.js",
   "Next.js",
   "TypeScript",
   "JavaScript",

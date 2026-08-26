@@ -4,7 +4,7 @@ export function TechMarquee() {
   const items = [...techStack, ...techStack];
 
   return (
-    <section aria-label="Technology stack showcase" className="overflow-hidden border-y border-white/10 py-6">
+    <section aria-label="Technology stack showcase" className="overflow-hidden border-y border-white/10 py-4">
       <div className="flex w-max animate-marquee gap-3">
         {items.map((item, index) => (
           <span

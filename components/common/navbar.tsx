@@ -13,8 +13,8 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-background/75 backdrop-blur-xl">
       <nav className="container-premium flex h-20 items-center justify-between" aria-label="Main navigation">
-        <a href="#home" className="focus-ring rounded-full font-display text-lg font-bold">
-          <span className="gradient-text">Nijin Joy</span>
+        <a href="#home" className="focus-ring rounded-full font-display text-lg font-bold tracking-wide">
+          <span className="gradient-text">NIJIN JOY</span>
           <span className="sr-only">{siteConfig.name}</span>
         </a>
 

@@ -2,7 +2,7 @@ import type { NavItem } from "@/types/portfolio";
 
 export const siteConfig = {
   name: "Nijin Joy",
-  role: "Senior Mobile Application Developer",
+  role: "Software Engineer",
   email: "nijinjoy1999@gmail.com",
   phone: "+971 509050493",
   location: "Available Worldwide",

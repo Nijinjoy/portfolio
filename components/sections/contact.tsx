@@ -44,11 +44,11 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="pb-16 pt-2">
       <div className="container-premium">
         <SectionHeading
           eyebrow="Contact"
-          title="Tell me about the mobile product you want to build."
+          title="Got an app idea? Let's make it real."
           description="Use the form or reach out directly. I respond best to messages with project context, timeline, platform targets, and required integrations."
         />
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -82,7 +82,7 @@ export function ContactSection() {
             <Button asChild className="mt-6 w-full" variant="secondary">
               <a href="https://cal.com" target="_blank" rel="noreferrer">
                 <Calendar className="h-4 w-4" />
-                Schedule Meeting
+                Book a Call
               </a>
             </Button>
           </div>
@@ -109,7 +109,7 @@ export function ContactSection() {
             </div>
             <Button className="mt-6 w-full sm:w-auto" disabled={isSubmitting}>
               <Send className="h-4 w-4" />
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Sending..." : "Send It Over"}
             </Button>
           </form>
         </div>

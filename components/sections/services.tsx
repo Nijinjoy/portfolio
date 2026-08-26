@@ -3,12 +3,12 @@ import { services } from "@/data/portfolio";
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="pb-8 pt-2">
       <div className="container-premium">
         <SectionHeading
           eyebrow="Services"
-          title="End-to-end support for mobile products."
-          description="From first build to optimization, maintenance, and consulting."
+          title="From idea to app store — I've got it covered."
+          description="First build, full launch, or a stubborn bug fix. I plug in wherever your mobile product needs momentum."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {

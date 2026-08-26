@@ -5,7 +5,7 @@ export function CertificationsSection() {
   return (
     <section id="certifications" className="py-24">
       <div className="container-premium">
-        <SectionHeading eyebrow="Certifications" title="Continuous learning across mobile, web, and cloud." />
+        <SectionHeading eyebrow="Certifications" title="Always leveling up." />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {certifications.map((cert) => {
             const Icon = cert.icon;

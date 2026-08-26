@@ -5,11 +5,24 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   align?: "left" | "center";
+  className?: string;
 };
 
-export function SectionHeading({ eyebrow, title, description, align = "center" }: SectionHeadingProps) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  align = "center",
+  className,
+}: SectionHeadingProps) {
   return (
-    <div className={cn("mx-auto mb-12 max-w-3xl", align === "center" ? "text-center" : "text-left")}>
+    <div
+      className={cn(
+        "mx-auto mb-12 max-w-3xl",
+        align === "center" ? "text-center" : "text-left",
+        className,
+      )}
+    >
       <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-sky-300">{eyebrow}</p>
       <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
         {title}

@@ -1,47 +1,48 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { SectionHeading } from "@/components/common/section-heading";
 
 const strengths = [
-  "React Native expertise",
-  "Flutter expertise",
-  "React.js expertise",
-  "Clean architecture",
-  "Mobile performance optimization",
-  "Reusable components",
+  "React Native",
+  "Flutter",
+  "React.js & Vue.js",
   "API integration",
   "Firebase",
   "Redux Toolkit",
   "TypeScript",
-  "Team collaboration",
-  "Agile development",
-  "ERP solutions",
-  "HRMS applications",
 ];
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="pb-2 pt-8">
       <div className="container-premium">
         <SectionHeading
           eyebrow="About Me"
-          title="A product-minded mobile developer focused on reliable delivery."
-          description="I combine cross-platform engineering, clean code, and thoughtful UI execution to ship apps that teams can maintain and users can trust."
+          title="Code that ships. Apps that last."
+          description="Cross-platform engineering, clean code, and UI that just feels right — apps your team can maintain and your users can trust."
+          className="mb-6"
         />
-        <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="glass-panel rounded-3xl p-7">
-            <p className="text-lg leading-8 text-muted-foreground">
-              I specialize in building production mobile applications for startups, software companies,
-              and enterprise teams. My work covers polished UI systems, authenticated flows, API-heavy
-              apps, Firebase-backed products, maps, payments, push notifications, and business apps such
-              as ERP and HRMS platforms.
+        <div className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="glass-panel rounded-2xl p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">What I do</p>
+            <p className="mt-3 text-base leading-7 text-muted-foreground">
+              I build production-grade apps for startups and enterprises alike — polished UI, secure
+              auth flows, Firebase-backed data, maps, payments, push notifications, and business-critical
+              ERP &amp; HRMS platforms.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {strengths.map((item) => (
-              <div key={item} className="glass-panel flex items-center gap-3 rounded-2xl p-4">
-                <CheckCircle2 className="h-5 w-5 flex-none text-sky-400" />
-                <span className="text-sm font-medium">{item}</span>
-              </div>
+              <motion.div
+                key={item}
+                whileHover={{ y: -3, scale: 1.03 }}
+                className="glass-panel flex items-center gap-2.5 rounded-xl p-3 transition-colors hover:border-primary/50"
+              >
+                <CheckCircle2 className="h-4 w-4 flex-none text-sky-400" />
+                <span className="text-xs font-semibold">{item}</span>
+              </motion.div>
             ))}
           </div>
         </div>

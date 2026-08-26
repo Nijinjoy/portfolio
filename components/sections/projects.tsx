@@ -25,11 +25,11 @@ export function ProjectsSection() {
   );
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="pb-8 pt-8">
       <div className="container-premium">
         <SectionHeading
           eyebrow="Projects"
-          title="Mobile and web products built for real workflows."
+          title="Real apps. Real users. Real impact."
           description="Filter by domain or stack, then open each case study for architecture, challenges, performance work, and contributions."
         />
         <div className="mb-8 flex gap-2 overflow-x-auto pb-3">

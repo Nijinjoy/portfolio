@@ -8,7 +8,7 @@ export function BlogSection() {
       <div className="container-premium">
         <SectionHeading
           eyebrow="Blog"
-          title="Practical notes on mobile engineering and clean code."
+          title="Notes from the field."
         />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
