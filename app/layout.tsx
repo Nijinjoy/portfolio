@@ -15,11 +15,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Senior Mobile Application Developer`,
+    default: `${siteConfig.name} | ${siteConfig.role}`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "Premium portfolio for a Senior Mobile Application Developer specializing in React Native, Flutter, React.js, TypeScript, Firebase, ERP, HRMS, and cross-platform mobile applications.",
+    "Premium portfolio specializing in React Native, Flutter, React.js, TypeScript, Firebase, ERP, HRMS, and cross-platform mobile applications.",
   keywords: seoKeywords,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteConfig.url,
-    title: `${siteConfig.name} | Senior Mobile Application Developer`,
+    title: `${siteConfig.name} | ${siteConfig.role}`,
     description: siteConfig.summary,
     siteName: `${siteConfig.name} Portfolio`,
     images: [{ url: absoluteUrl("/og-image.png"), width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Senior Mobile Application Developer`,
+    title: `${siteConfig.name} | ${siteConfig.role}`,
     description: siteConfig.summary,
     images: [absoluteUrl("/og-image.png")],
   },

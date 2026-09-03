@@ -94,18 +94,17 @@ export const experiences = [
     position: "Software Engineer",
     duration: "Oct 2025 - Present",
     responsibilities: [
-      "Independently built and deployed Addon-s, an HR and CRM mobile application for Android and iOS using React Native.",
-      "Developed companion web applications and admin interfaces with Vue.js.",
+      "Built and deployed 3+ production-grade mobile and web applications using React Native and Vue.js.",
       "Integrated Stripe for in-app payments and Twilio for phone number-based OTP login.",
+      "Integrated maps with react-native-maps for live location tracking, custom markers, and geolocation-based workflows.",
+      "Architected app-wide state management with Redux Toolkit and Redux, using RTK Query and Redux-Saga for async data flows.",
       "Handled mobile app development, feature implementation, store release preparation, and production deployment.",
-      "Built enterprise workflows for HR operations, CRM usage, and mobile-first business processes.",
     ],
     achievements: [
-      "Published Addon-s on both Google Play Store and Apple App Store.",
       "Delivered an end-to-end mobile and web product independently from implementation through release.",
       "Shipped secure payment and phone-based authentication flows with Stripe and Twilio.",
     ],
-    technologies: ["React Native", "Vue.js", "Stripe", "Twilio", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
+    technologies: ["React Native", "Vue.js", "Redux Toolkit", "Redux-Saga", "react-native-maps", "Stripe", "Twilio", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
   },
   {
     company: "Impetors Pvt Ltd, Bengaluru",
