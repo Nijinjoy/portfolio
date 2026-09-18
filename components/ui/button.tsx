@@ -10,11 +10,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-premium hover:bg-blue-500",
+        default: "bg-primary text-primary-foreground shadow-premium hover:bg-blue-500",
         secondary:
-          "border border-white/12 bg-white/8 text-foreground backdrop-blur hover:border-primary/50 hover:bg-primary/10",
-        ghost: "text-muted-foreground hover:bg-white/8 hover:text-foreground",
+          "border border-border bg-card text-foreground hover:border-primary/60 hover:bg-primary/5 dark:border-white/10 dark:bg-white/[0.06] dark:hover:bg-primary/10",
+        ghost:
+          "text-muted-foreground hover:bg-muted dark:hover:bg-white/[0.08] hover:text-foreground",
       },
       size: {
         default: "min-h-11 px-5",
@@ -30,8 +30,7 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
@@ -46,9 +45,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       );
     }
 
+    const isPrimary = !variant || variant === "default";
+
     return (
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
-        <span className="absolute inset-0 translate-x-[-120%] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-[120%]" />
+        {isPrimary ? (
+          <span className="absolute inset-0 translate-x-[-120%] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-[120%]" />
+        ) : null}
         <span className="relative inline-flex items-center gap-2">{children}</span>
       </Comp>
     );

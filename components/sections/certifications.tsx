@@ -10,8 +10,8 @@ export function CertificationsSection() {
           {certifications.map((cert) => {
             const Icon = cert.icon;
             return (
-              <article key={cert.title} className="glass-panel rounded-3xl p-5">
-                <Icon className="h-7 w-7 text-sky-300" />
+              <article key={cert.title} className="glass-panel rounded-2xl p-5">
+                <Icon className="h-7 w-7 text-accent-ink" />
                 <h3 className="mt-4 font-display text-lg font-bold">{cert.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{cert.issuer}</p>
               </article>

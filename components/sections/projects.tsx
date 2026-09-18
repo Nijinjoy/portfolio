@@ -20,17 +20,23 @@ import { cn } from "@/lib/utils";
 export function ProjectsSection() {
   const [category, setCategory] = useState("All");
   const filtered = useMemo(
-    () => projects.filter((project) => category === "All" || project.category === category || project.techStack.includes(category)),
+    () =>
+      projects.filter(
+        (project) =>
+          category === "All" ||
+          project.category === category ||
+          project.techStack.includes(category),
+      ),
     [category],
   );
 
   return (
-    <section id="projects" className="pb-8 pt-8">
+    <section id="projects" className="section">
       <div className="container-premium">
         <SectionHeading
           eyebrow="Projects"
           title="Real apps. Real users. Real impact."
-          description="Filter by domain or stack, then open each case study for architecture, challenges, performance work, and contributions."
+          description="Filter by stack or domain. Open any case study for the architecture, the hard parts, and what I contributed."
         />
         <div className="mb-8 flex gap-2 overflow-x-auto pb-3">
           {projectCategories.map((item) => (
@@ -40,7 +46,7 @@ export function ProjectsSection() {
                 "focus-ring whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition",
                 category === item
                   ? "border-primary bg-primary text-primary-foreground"
-                  : "border-white/10 bg-white/6 text-muted-foreground hover:border-primary/50 hover:text-foreground",
+                  : "border-border dark:border-white/10 bg-muted/50 dark:bg-white/[0.05] text-muted-foreground hover:border-primary/50 hover:text-foreground",
               )}
               onClick={() => setCategory(item)}
             >
@@ -55,25 +61,29 @@ export function ProjectsSection() {
               <motion.article
                 layout
                 whileHover={{ y: -6 }}
-                className="glass-panel flex h-full flex-col overflow-hidden rounded-3xl"
+                className="glass-panel flex h-full flex-col overflow-hidden rounded-2xl"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
                   <Image
                     src={project.image}
                     alt={`${project.title} app preview`}
                     fill
-                    className={cn(project.imageFit === "contain" ? "object-contain p-6" : "object-cover")}
+                    className={cn(
+                      project.imageFit === "contain" ? "object-contain p-6" : "object-cover",
+                    )}
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-ink">
                     {project.category}
                   </p>
                   <h3 className="mt-3 font-display text-xl font-bold">{project.title}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-7 text-muted-foreground">{project.description}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.techStack.map((tech) => (
-                      <span key={tech} className="rounded-full bg-white/8 px-3 py-1 text-xs text-muted-foreground">
+                      <span key={tech} className="chip">
                         {tech}
                       </span>
                     ))}
@@ -123,7 +133,9 @@ export function ProjectsSection() {
 
               <DialogContent>
                 <div className="pr-10">
-                  <DialogTitle className="font-display text-2xl font-bold">{project.title}</DialogTitle>
+                  <DialogTitle className="font-display text-2xl font-bold">
+                    {project.title}
+                  </DialogTitle>
                   <DialogDescription className="mt-2 text-muted-foreground">
                     {project.description}
                   </DialogDescription>
@@ -160,7 +172,9 @@ export function ProjectsSection() {
                       src={project.image}
                       alt={`${project.title} architecture preview`}
                       fill
-                      className={cn(project.imageFit === "contain" ? "object-contain p-6" : "object-cover")}
+                      className={cn(
+                        project.imageFit === "contain" ? "object-contain p-6" : "object-cover",
+                      )}
                     />
                   </div>
                   <div className="grid gap-4">
@@ -170,16 +184,19 @@ export function ProjectsSection() {
                       ["Solutions", project.details.solutions],
                       ["Performance Improvements", project.details.performance],
                     ].map(([label, text]) => (
-                      <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                        <h4 className="font-semibold text-sky-300">{label}</h4>
-                        <p className="mt-2 text-sm leading-7 text-muted-foreground">{text}</p>
+                      <div
+                        key={label}
+                        className="rounded-2xl border border-border dark:border-white/10 bg-muted/40 dark:bg-white/[0.04] p-4"
+                      >
+                        <h4 className="font-semibold text-accent-ink">{label}</h4>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
                       </div>
                     ))}
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                      <h4 className="font-semibold text-sky-300">My Contributions</h4>
+                    <div className="rounded-2xl border border-border dark:border-white/10 bg-muted/40 dark:bg-white/[0.04] p-4">
+                      <h4 className="font-semibold text-accent-ink">My Contributions</h4>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {project.details.contributions.map((item) => (
-                          <span key={item} className="rounded-full bg-primary/12 px-3 py-1 text-xs font-semibold text-sky-300">
+                          <span key={item} className="chip-accent">
                             {item}
                           </span>
                         ))}

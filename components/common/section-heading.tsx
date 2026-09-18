@@ -18,17 +18,19 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "mx-auto mb-12 max-w-3xl",
+        "mx-auto mb-10 max-w-2xl",
         align === "center" ? "text-center" : "text-left",
         className,
       )}
     >
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-sky-300">{eyebrow}</p>
-      <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
+        {eyebrow}
+      </p>
+      <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-8 text-muted-foreground sm:text-lg">{description}</p>
+        <p className="mt-4 text-base leading-relaxed text-muted-foreground">{description}</p>
       ) : null}
     </div>
   );

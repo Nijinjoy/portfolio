@@ -11,9 +11,15 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-background/75 backdrop-blur-xl">
-      <nav className="container-premium flex h-20 items-center justify-between" aria-label="Main navigation">
-        <a href="#home" className="focus-ring rounded-full font-display text-lg font-bold tracking-wide">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border dark:border-white/10 bg-background/75 backdrop-blur-xl">
+      <nav
+        className="container-premium flex h-16 items-center justify-between"
+        aria-label="Main navigation"
+      >
+        <a
+          href="#home"
+          className="focus-ring rounded-full font-display text-base font-bold tracking-wide"
+        >
           <span className="gradient-text">NIJIN JOY</span>
           <span className="sr-only">{siteConfig.name}</span>
         </a>
@@ -23,7 +29,7 @@ export function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-white/8 hover:text-foreground focus-ring"
+              className="rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted dark:hover:bg-white/[0.08] hover:text-foreground focus-ring"
             >
               {item.label}
             </a>
@@ -75,7 +81,7 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-white/8 hover:text-foreground"
+                className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-muted dark:hover:bg-white/[0.08] hover:text-foreground"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

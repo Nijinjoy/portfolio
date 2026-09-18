@@ -44,15 +44,15 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="pb-16 pt-2">
+    <section id="contact" className="section">
       <div className="container-premium">
         <SectionHeading
           eyebrow="Contact"
           title="Got an app idea? Let's make it real."
-          description="Use the form or reach out directly. I respond best to messages with project context, timeline, platform targets, and required integrations."
+          description="Send the project context, timeline, target platforms, and integrations — I'll come back with a plan."
         />
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="glass-panel rounded-3xl p-6">
+          <div className="glass-panel rounded-2xl p-6">
             <h3 className="font-display text-xl font-bold">Contact Details</h3>
             <div className="mt-6 grid gap-4">
               {[
@@ -65,9 +65,9 @@ export function ContactSection() {
                 <a
                   key={String(label)}
                   href={String(href)}
-                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-primary/50"
+                  className="flex items-center gap-4 rounded-2xl border border-border dark:border-white/10 bg-muted/40 dark:bg-white/[0.04] p-4 transition hover:border-primary/50"
                 >
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/12 text-sky-300">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 dark:bg-primary/15 text-accent-ink">
                     <Icon className="h-5 w-5" />
                   </span>
                   <span>
@@ -87,16 +87,33 @@ export function ContactSection() {
             </Button>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="glass-panel rounded-3xl p-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="glass-panel rounded-2xl p-6">
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Name" error={errors.name?.message}>
-                <input {...register("name")} autoComplete="name" className="input" placeholder="Your name" />
+                <input
+                  {...register("name")}
+                  autoComplete="name"
+                  className="input"
+                  placeholder="Your name"
+                />
               </Field>
               <Field label="Email" error={errors.email?.message}>
-                <input {...register("email")} type="email" autoComplete="email" className="input" placeholder="you@example.com" />
+                <input
+                  {...register("email")}
+                  type="email"
+                  autoComplete="email"
+                  className="input"
+                  placeholder="you@example.com"
+                />
               </Field>
               <Field label="Phone" error={errors.phone?.message}>
-                <input {...register("phone")} type="tel" autoComplete="tel" className="input" placeholder="+971 509050493" />
+                <input
+                  {...register("phone")}
+                  type="tel"
+                  autoComplete="tel"
+                  className="input"
+                  placeholder="+971 509050493"
+                />
               </Field>
               <div className="hidden sm:block" />
               <Field label="Message" error={errors.message?.message} className="sm:col-span-2">
@@ -116,7 +133,10 @@ export function ContactSection() {
       </div>
 
       {toast ? (
-        <div role="status" className="fixed bottom-6 left-1/2 z-50 flex w-[min(92vw,420px)] -translate-x-1/2 items-center justify-between gap-4 rounded-2xl border border-white/10 bg-background/95 p-4 shadow-2xl backdrop-blur-xl">
+        <div
+          role="status"
+          className="fixed bottom-6 left-1/2 z-50 flex w-[min(92vw,420px)] -translate-x-1/2 items-center justify-between gap-4 rounded-2xl border border-border dark:border-white/10 bg-background/95 p-4 shadow-2xl backdrop-blur-xl"
+        >
           <p className="text-sm font-medium">{toast}</p>
           <button aria-label="Dismiss notification" onClick={() => setToast(null)}>
             <X className="h-4 w-4" />

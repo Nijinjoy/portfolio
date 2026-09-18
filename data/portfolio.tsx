@@ -2,7 +2,6 @@ import {
   SiAndroid,
   SiExpo,
   SiFirebase,
-  SiFlutter,
   SiGraphql,
   SiJavascript,
   SiJira,
@@ -23,7 +22,6 @@ import type { Project, SkillGroup } from "@/types/portfolio";
 
 export const typingRoles = [
   "React Native Developer",
-  "Flutter Developer",
   "React.js Developer",
   "Cross Platform Expert",
   "Mobile UI Specialist",
@@ -54,7 +52,6 @@ export const skillGroups: SkillGroup[] = [
     title: "Mobile",
     skills: [
       { name: "React Native", level: 94, experience: "3+ years", icon: SiReact },
-      { name: "Flutter", level: 88, experience: "2+ years", icon: SiFlutter },
       { name: "Android", level: 84, experience: "3+ years", icon: SiAndroid },
       { name: "iOS", level: 80, experience: "2+ years", icon: FaApple },
     ],
@@ -94,17 +91,18 @@ export const experiences = [
     position: "Software Engineer",
     duration: "Oct 2025 - Present",
     responsibilities: [
-      "Built and deployed 3+ production-grade mobile and web applications using React Native and Vue.js.",
-      "Integrated Stripe for in-app payments and Twilio for phone number-based OTP login.",
-      "Integrated maps with react-native-maps for live location tracking, custom markers, and geolocation-based workflows.",
-      "Architected app-wide state management with Redux Toolkit and Redux, using RTK Query and Redux-Saga for async data flows.",
-      "Handled mobile app development, feature implementation, store release preparation, and production deployment.",
+      "Built and deployed 3+ production mobile and web apps with React Native and Vue.js.",
+      "Integrated Stripe and Botim Money for payments, and Twilio for phone-based OTP login.",
+      "Integrated react-native-maps for live location tracking, custom markers, and geolocation workflows.",
+      "Localized the app in Arabic and English using i18n.",
+      "Built offline sync to keep core workflows running without connectivity, reconciling once back online.",
+      "Architected state management with Redux Toolkit, RTK Query, and Redux-Saga.",
+      "Owned feature development through store release and production deployment.",
     ],
     achievements: [
-      "Delivered an end-to-end mobile and web product independently from implementation through release.",
-      "Shipped secure payment and phone-based authentication flows with Stripe and Twilio.",
+      "Delivered an end-to-end mobile and web product independently, from build to release.",
     ],
-    technologies: ["React Native", "Vue.js", "Redux Toolkit", "Redux-Saga", "react-native-maps", "Stripe", "Twilio", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
+    technologies: ["React Native", "Vue.js", "Redux Toolkit", "Redux-Saga", "react-native-maps", "Stripe", "Botim Money", "Twilio", "i18n", "Offline Sync", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
   },
   {
     company: "Impetors Pvt Ltd, Bengaluru",
@@ -140,7 +138,6 @@ export const experiences = [
 export const projectCategories = [
   "All",
   "React Native",
-  "Flutter",
   "React.js",
   "HRMS",
   "CRM",
@@ -154,6 +151,82 @@ export const projectCategories = [
 
 export const projects: Project[] = [
   {
+    title: "Blaze HR",
+    category: "HRMS",
+    description:
+      "A production HRMS mobile application developed at Impetors Pvt Ltd, Bengaluru and published on Android and iOS.",
+    image: "/images/blaze-hr-app.png",
+    techStack: ["React Native", "TypeScript", "REST APIs", "HRMS", "Android", "iOS"],
+    features: [
+      "Employee self-service",
+      "HRMS workflows",
+      "Cross-platform mobile delivery",
+      "Production store releases",
+    ],
+    links: {
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.blazehr.blazhr&pcampaignid=web_share",
+      appStore: "https://apps.apple.com/gb/app/blaze-hr/id6738582544",
+      caseStudy: "#",
+    },
+    details: {
+      architecture:
+        "Cross-platform mobile architecture with reusable UI components, typed feature modules, and API-driven HRMS workflows.",
+      challenges:
+        "Delivering reliable employee-facing HR workflows across Android and iOS while maintaining a polished production app experience.",
+      solutions:
+        "Built reusable screens and components, integrated backend APIs, handled mobile release requirements, and kept the UX clean for enterprise users.",
+      performance:
+        "Focused on responsive screens, predictable navigation, efficient API states, and stable app-store-ready builds.",
+      contributions: [
+        "Mobile development",
+        "HRMS workflows",
+        "API integration",
+        "Android release",
+        "iOS release",
+      ],
+    },
+  },
+  {
+    title: "ADDON-S POS",
+    category: "Restaurant POS",
+    description:
+      "A React Native restaurant POS billing application with three dedicated user roles — billing, kitchen, and customer display — published on Google Play with offline sync, Botim Money payments, and multi-language support.",
+    image: "/images/addon-s-pos.png",
+    techStack: ["React Native", "Mobile App", "Tablet App", "Restaurant POS", "Offline Sync", "Botim Money", "i18n", "Android"],
+    features: [
+      "Billing user role",
+      "Kitchen user role",
+      "Customer display role",
+      "Kitchen and liquor item billing",
+      "Offline sync",
+      "Botim Money payment gateway",
+      "Multi-language support with i18n",
+    ],
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=com.addonsposapp&pcampaignid=web_share",
+      caseStudy: "#",
+    },
+    details: {
+      architecture:
+        "React Native POS structure with three distinct user roles — billing user, kitchen user, and customer display user — each with a purpose-built screen flow, local-first data storage, and background sync across mobile and tablet layouts.",
+      challenges:
+        "Keeping billing, kitchen, and customer display roles in sync in real time even with unreliable connectivity, integrating a secure in-app payment gateway, and supporting multiple languages across every screen.",
+      solutions:
+        "Built dedicated flows for the billing, kitchen, and customer display user roles, added offline sync so billing continues without network access and reconciles once reconnected, integrated Botim Money for in-app payments, added i18n for language translation, and published the app on Google Play.",
+      performance:
+        "Focused on fast billing interactions, reliable offline-to-online sync, readable tablet layouts, and dependable payment processing in production.",
+      contributions: [
+        "React Native development",
+        "Billing, kitchen, and customer display role workflows",
+        "POS billing flows",
+        "Offline sync implementation",
+        "Botim Money payment integration",
+        "i18n language translation",
+        "Play Store release",
+      ],
+    },
+  },  {
     title: "Addon-s",
     category: "CRM",
     description:
@@ -230,43 +303,6 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "Blaze HR",
-    category: "HRMS",
-    description:
-      "A production HRMS mobile application developed at Impetors Pvt Ltd, Bengaluru and published on Android and iOS.",
-    image: "/images/blaze-hr-app.png",
-    techStack: ["React Native", "TypeScript", "REST APIs", "HRMS", "Android", "iOS"],
-    features: [
-      "Employee self-service",
-      "HRMS workflows",
-      "Cross-platform mobile delivery",
-      "Production store releases",
-    ],
-    links: {
-      playStore:
-        "https://play.google.com/store/apps/details?id=com.blazehr.blazhr&pcampaignid=web_share",
-      appStore: "https://apps.apple.com/gb/app/blaze-hr/id6738582544",
-      caseStudy: "#",
-    },
-    details: {
-      architecture:
-        "Cross-platform mobile architecture with reusable UI components, typed feature modules, and API-driven HRMS workflows.",
-      challenges:
-        "Delivering reliable employee-facing HR workflows across Android and iOS while maintaining a polished production app experience.",
-      solutions:
-        "Built reusable screens and components, integrated backend APIs, handled mobile release requirements, and kept the UX clean for enterprise users.",
-      performance:
-        "Focused on responsive screens, predictable navigation, efficient API states, and stable app-store-ready builds.",
-      contributions: [
-        "Mobile development",
-        "HRMS workflows",
-        "API integration",
-        "Android release",
-        "iOS release",
-      ],
-    },
-  },
-  {
     title: "Bsporty",
     category: "Sports",
     description:
@@ -302,44 +338,11 @@ export const projects: Project[] = [
       ],
     },
   },
-  {
-    title: "ADDON-S POS",
-    category: "Restaurant POS",
-    description:
-      "A React Native restaurant POS billing application for mobile and tablet users, currently used as an APK at a client site for kitchen items and liquor billing.",
-    image: "/images/addon-s-pos.png",
-    techStack: ["React Native", "Mobile App", "Tablet App", "Restaurant POS", "APK"],
-    features: [
-      "Role-based access",
-      "Biller user workflow",
-      "Kitchen user workflow",
-      "Customer display",
-      "Kitchen and liquor item billing",
-    ],
-    links: { caseStudy: "#" },
-    details: {
-      architecture:
-        "React Native POS structure with separate role-based flows for billers, kitchen users, and customer display screens across mobile and tablet layouts.",
-      challenges:
-        "Supporting real client-site billing operations without a store deployment while keeping billing, kitchen, and display workflows clear for each user role.",
-      solutions:
-        "Built APK-based mobile and tablet flows for billing kitchen items and liquor items, with role-specific screens for front-desk, kitchen, and customer-facing usage.",
-      performance:
-        "Focused on fast billing interactions, readable tablet layouts, and dependable APK usage in the live client environment.",
-      contributions: [
-        "React Native development",
-        "Role-based workflows",
-        "POS billing flows",
-        "Mobile and tablet UI",
-        "Client-site APK usage",
-      ],
-    },
-  },
+
 ];
 
 export const services = [
   { title: "React Native Development", icon: Smartphone, text: "Production mobile apps with clean TypeScript, native integrations, and scalable state." },
-  { title: "Flutter Development", icon: SiFlutter, text: "Beautiful cross-platform apps with clean layers, responsive UI, and optimized runtime behavior." },
   { title: "React.js Development", icon: SiReact, text: "Modern dashboards, admin portals, landing pages, and product frontends." },
   { title: "Cross Platform Development", icon: Layers, text: "Shared business logic, consistent UI systems, and reliable Android/iOS delivery." },
   { title: "API & Firebase Integration", icon: SiFirebase, text: "REST, GraphQL, auth, Firestore, push notifications, analytics, and cloud workflows." },
@@ -349,7 +352,6 @@ export const services = [
 export const certifications = [
   { title: "React", issuer: "Professional Training", icon: SiReact },
   { title: "React Native", issuer: "Mobile Development", icon: SiExpo },
-  { title: "Flutter", issuer: "Cross Platform", icon: SiFlutter },
   { title: "JavaScript", issuer: "Modern ES6+", icon: SiJavascript },
   { title: "TypeScript", issuer: "Type Safety", icon: SiTypescript },
   { title: "AWS", issuer: "Cloud Foundations", icon: FaAws },
@@ -360,7 +362,6 @@ export const certifications = [
 export const techStack = [
   "React",
   "React Native",
-  "Flutter",
   "Vue.js",
   "Next.js",
   "TypeScript",
@@ -376,7 +377,6 @@ export const techStack = [
 
 export const blogPosts = [
   "React Native Best Practices",
-  "Flutter Performance Tips",
   "React.js Development",
   "JavaScript ES6",
   "Mobile App Architecture",

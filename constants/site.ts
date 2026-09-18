@@ -26,7 +26,6 @@ export const navItems: NavItem[] = [
 export const seoKeywords = [
   "Mobile Application Developer",
   "React Native Developer",
-  "Flutter Developer",
   "React.js Developer",
   "Senior Mobile Developer",
   "Cross Platform App Developer",

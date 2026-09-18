@@ -1,10 +1,24 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
 import { Providers } from "@/components/common/providers";
 import { siteConfig, seoKeywords } from "@/constants/site";
 import { absoluteUrl } from "@/lib/utils";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  display: "swap",
+  variable: "--font-poppins",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -19,7 +33,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "Premium portfolio specializing in React Native, Flutter, React.js, TypeScript, Firebase, ERP, HRMS, and cross-platform mobile applications.",
+    "Premium portfolio specializing in React Native, React.js, TypeScript, Firebase, ERP, HRMS, and cross-platform mobile applications.",
   keywords: seoKeywords,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -64,7 +78,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
       <body>
         <Script
           id="person-jsonld"

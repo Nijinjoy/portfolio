@@ -26,13 +26,15 @@ const config: Config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        "accent-ink": "hsl(var(--accent-ink))",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
         display: ["var(--font-poppins)", "Poppins", "Inter", "sans-serif"],
       },
       boxShadow: {
-        premium: "0 24px 80px -36px rgba(37, 99, 235, 0.55)",
+        card: "0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 24px -18px rgba(15, 23, 42, 0.22)",
+        premium: "0 10px 28px -14px rgba(37, 99, 235, 0.5)",
       },
       keyframes: {
         marquee: {

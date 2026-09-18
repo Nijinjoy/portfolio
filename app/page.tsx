@@ -13,10 +13,10 @@ const ProjectsSection = dynamic(
   () => import("@/components/sections/projects").then((module) => module.ProjectsSection),
   {
     loading: () => (
-      <section className="py-24" aria-label="Loading projects">
+      <section className="section" aria-label="Loading projects">
         <div className="container-premium grid gap-6 lg:grid-cols-3">
           {[1, 2, 3].map((item) => (
-            <div key={item} className="glass-panel h-96 animate-pulse rounded-3xl" />
+            <div key={item} className="glass-panel h-96 animate-pulse rounded-2xl" />
           ))}
         </div>
       </section>
