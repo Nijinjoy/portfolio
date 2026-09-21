@@ -5,7 +5,6 @@ import {
   SiGraphql,
   SiJavascript,
   SiJira,
-  SiNextdotjs,
   SiPostman,
   SiReact,
   SiRedux,
@@ -31,7 +30,7 @@ export const typingRoles = [
 export const stats = [
   { value: "3+", label: "Years Experience" },
   { value: "5", label: "Projects" },
-  { value: "13", label: "Technologies" },
+  { value: "12", label: "Technologies" },
 ];
 
 export const skillGroups: SkillGroup[] = [
@@ -40,7 +39,6 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       { name: "React.js", level: 92, experience: "3+ years", icon: SiReact },
       { name: "Vue.js", level: 78, experience: "1+ years", icon: SiVuedotjs },
-      { name: "Next.js", level: 86, experience: "2+ years", icon: SiNextdotjs },
       { name: "HTML", level: 95, experience: "3+ years", icon: FaHtml5 },
       { name: "CSS", level: 92, experience: "3+ years", icon: SiTailwindcss },
       { name: "Tailwind CSS", level: 90, experience: "2+ years", icon: SiTailwindcss },
@@ -101,6 +99,8 @@ export const experiences = [
     ],
     achievements: [
       "Delivered an end-to-end mobile and web product independently, from build to release.",
+      "Simplified onboarding with secure phone-based OTP login, a sign-in flow users already trust and expect.",
+      "Tailored products for the UAE market with bilingual Arabic-English experiences and Botim Money, a widely used regional payment method.",
     ],
     technologies: ["React Native", "Vue.js", "Redux Toolkit", "Redux-Saga", "react-native-maps", "Stripe", "Botim Money", "Twilio", "i18n", "Offline Sync", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
   },
@@ -124,14 +124,18 @@ export const experiences = [
     position: "Mobile App Developer",
     duration: "May 2023 - 2024",
     responsibilities: [
-      "Developed ERP, HRMS, expense management, and operations apps for enterprise users.",
-      "Implemented offline-friendly workflows, role-based access, dashboards, and approval flows.",
+      "Built hospitality apps and a sports app for a Qatar-based client.",
+      "Added multi-language support with language translation across every screen.",
+      "Implemented secure, seamless authentication flows.",
+      "Integrated push notifications to keep users engaged and informed.",
+      "Deployed and released apps to the Google Play Store and Apple App Store.",
     ],
     achievements: [
-      "Shipped production modules for attendance, payroll, leave management, and expense approvals.",
+      "Delivered hospitality and sports apps for a Qatar client, from build to store release.",
+      "Launched multi-language apps with secure authentication and push notifications on both Google Play Store and Apple App Store.",
       "Improved crash-free sessions by tightening error handling and release QA checklists.",
     ],
-    technologies: ["React Native", "React.js", "REST APIs", "SQLite", "Firebase"],
+    technologies: ["React Native", "React.js", "REST APIs", "SQLite", "Firebase", "i18n", "Push Notifications", "Authentication", "Play Store", "App Store"],
   },
 ];
 
@@ -188,7 +192,7 @@ export const projects: Project[] = [
     },
   },
   {
-    title: "ADDON-S POS",
+    title: "ADD-POS",
     category: "Restaurant POS",
     description:
       "A React Native restaurant POS billing application with three dedicated user roles — billing, kitchen, and customer display — published on Google Play with offline sync, Botim Money payments, and multi-language support.",
@@ -363,7 +367,6 @@ export const techStack = [
   "React",
   "React Native",
   "Vue.js",
-  "Next.js",
   "TypeScript",
   "JavaScript",
   "Redux",
