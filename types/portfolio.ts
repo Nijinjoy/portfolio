@@ -8,7 +8,7 @@ export type NavItem = {
 export type Skill = {
   name: string;
   level: number;
-  experience: string;
+  experience?: string;
   icon: ComponentType<{ className?: string }>;
 };
 

@@ -6,11 +6,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "group relative inline-flex min-h-11 items-center justify-center overflow-hidden rounded-full px-5 py-2.5 text-sm font-semibold outline-none transition focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  "group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-2.5 text-sm font-semibold outline-none transition focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-premium hover:bg-blue-500",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
         secondary:
           "border border-border bg-card text-foreground hover:border-primary/60 hover:bg-primary/5 dark:border-white/10 dark:bg-white/[0.06] dark:hover:bg-primary/10",
         ghost:
@@ -45,13 +45,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       );
     }
 
-    const isPrimary = !variant || variant === "default";
-
     return (
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
-        {isPrimary ? (
-          <span className="absolute inset-0 translate-x-[-120%] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-[120%]" />
-        ) : null}
         <span className="relative inline-flex items-center gap-2">{children}</span>
       </Comp>
     );

@@ -16,9 +16,9 @@ export function SkillsSection() {
         <SectionHeading
           eyebrow="Skills"
           title="The toolkit behind every app I ship."
-          description="Cross-platform mobile, frontend engineering, state management, APIs, databases, and the tools I ship with."
+          description="Mobile, web, data, and the tools I use every day."
         />
-        <div className="mb-8 flex flex-wrap justify-center gap-2">
+        <div className="mb-8 flex flex-wrap gap-2">
           {skillGroups.map((item) => (
             <button
               key={item.title}
@@ -57,7 +57,9 @@ export function SkillsSection() {
                   </span>
                   <div>
                     <p className="text-sm font-semibold">{skill.name}</p>
-                    <p className="text-xs text-muted-foreground">{skill.experience}</p>
+                    {skill.experience ? (
+                      <p className="text-xs text-muted-foreground">{skill.experience}</p>
+                    ) : null}
                   </div>
                 </motion.div>
               );

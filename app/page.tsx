@@ -7,7 +7,6 @@ import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/hero";
 import { ServicesSection } from "@/components/sections/services";
 import { SkillsSection } from "@/components/sections/skills";
-import { TechMarquee } from "@/components/sections/tech-marquee";
 
 const ProjectsSection = dynamic(
   () => import("@/components/sections/projects").then((module) => module.ProjectsSection),
@@ -33,7 +32,6 @@ export default function Home() {
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
-        <TechMarquee />
         <ProjectsSection />
         <ServicesSection />
         <ContactSection />

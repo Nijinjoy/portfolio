@@ -12,25 +12,27 @@ export function SectionHeading({
   eyebrow,
   title,
   description,
-  align = "center",
+  align = "left",
   className,
 }: SectionHeadingProps) {
   return (
     <div
       className={cn(
-        "mx-auto mb-10 max-w-2xl",
-        align === "center" ? "text-center" : "text-left",
+        "mb-12 max-w-4xl",
+        align === "center" ? "mx-auto text-center" : "text-left",
         className,
       )}
     >
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
         {eyebrow}
       </p>
-      <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+      <h2 className="text-balance font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-relaxed text-muted-foreground">{description}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          {description}
+        </p>
       ) : null}
     </div>
   );

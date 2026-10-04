@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Smartphone } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Globe } from "lucide-react";
 import { FaApple, FaGooglePlay } from "react-icons/fa6";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
@@ -14,8 +14,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { projectCategories, projects } from "@/data/portfolio";
+import { projects } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+
+const MAX_CARD_TECH = 3;
+
+const projectCategories = ["All", "React Native", "Vue.js"];
 
 export function ProjectsSection() {
   const [category, setCategory] = useState("All");
@@ -36,7 +40,7 @@ export function ProjectsSection() {
         <SectionHeading
           eyebrow="Projects"
           title="Real apps. Real users. Real impact."
-          description="Filter by stack or domain. Open any case study for the architecture, the hard parts, and what I contributed."
+          description="Apps people download and use. Open a case study to see how each one was built."
         />
         <div className="mb-8 flex gap-2 overflow-x-auto pb-3">
           {projectCategories.map((item) => (
@@ -81,50 +85,42 @@ export function ProjectsSection() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {project.description}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.techStack.map((tech) => (
-                      <span key={tech} className="chip">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.links.github ? (
-                      <Button asChild size="sm" variant="secondary">
-                        <a href={project.links.github}>
-                          <Github className="h-3.5 w-3.5" />
-                          GitHub
-                        </a>
-                      </Button>
-                    ) : null}
-                    {project.links.demo ? (
-                      <Button asChild size="sm" variant="secondary">
-                        <a href={project.links.demo}>
-                          <ExternalLink className="h-3.5 w-3.5" />
-                          Demo
-                        </a>
-                      </Button>
-                    ) : null}
-                    {project.links.playStore ? (
-                      <Button asChild size="sm" variant="secondary">
-                        <a href={project.links.playStore} target="_blank" rel="noreferrer">
-                          <FaGooglePlay className="h-3.5 w-3.5" />
-                          Play Store
-                        </a>
-                      </Button>
-                    ) : null}
-                    {project.links.appStore ? (
-                      <Button asChild size="sm" variant="secondary">
-                        <a href={project.links.appStore} target="_blank" rel="noreferrer">
-                          <FaApple className="h-3.5 w-3.5" />
-                          App Store
-                        </a>
-                      </Button>
-                    ) : null}
+                  <p className="mt-4 text-xs font-medium text-muted-foreground">
+                    {project.techStack.slice(0, MAX_CARD_TECH).join(" · ")}
+                  </p>
+                  <div className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-5 dark:border-white/10">
+                    <div className="flex gap-2">
+                      {[
+                        { href: project.links.github, label: "GitHub", Icon: Github },
+                        { href: project.links.demo, label: "Live site", Icon: Globe },
+                        { href: project.links.playStore, label: "Google Play", Icon: FaGooglePlay },
+                        { href: project.links.appStore, label: "App Store", Icon: FaApple },
+                      ]
+                        .filter((link) => link.href)
+                        .map(({ href, label, Icon }) => (
+                          <Button
+                            key={label}
+                            asChild
+                            size="icon"
+                            variant="secondary"
+                            className="h-9 w-9 min-h-9"
+                          >
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`${project.title} on ${label}`}
+                              title={label}
+                            >
+                              <Icon className="h-4 w-4" />
+                            </a>
+                          </Button>
+                        ))}
+                    </div>
                     <DialogTrigger asChild>
-                      <Button size="sm">
-                        <Smartphone className="h-3.5 w-3.5" />
+                      <Button size="sm" variant="ghost" className="text-foreground">
                         Case Study
+                        <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
                       </Button>
                     </DialogTrigger>
                   </div>
@@ -161,7 +157,7 @@ export function ProjectsSection() {
                     <Button asChild size="sm" variant="secondary">
                       <a href={project.links.demo} target="_blank" rel="noreferrer">
                         <ExternalLink className="h-3.5 w-3.5" />
-                        Live Demo
+                        Live Site
                       </a>
                     </Button>
                   ) : null}
@@ -182,7 +178,7 @@ export function ProjectsSection() {
                       ["Architecture", project.details.architecture],
                       ["Challenges", project.details.challenges],
                       ["Solutions", project.details.solutions],
-                      ["Performance Improvements", project.details.performance],
+                      ["Performance", project.details.performance],
                     ].map(([label, text]) => (
                       <div
                         key={label}

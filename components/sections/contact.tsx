@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Calendar, Github, Linkedin, Mail, MapPin, Phone, Send, X } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, MessageCircle, Phone, Send, X } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { SectionHeading } from "@/components/common/section-heading";
@@ -14,7 +14,12 @@ import { siteConfig } from "@/constants/site";
 const contactSchema = z.object({
   name: z.string().min(2, "Enter your name."),
   email: z.string().email("Enter a valid email."),
-  phone: z.string().min(7, "Enter a valid phone number."),
+  phone: z
+    .string()
+    .refine(
+      (value) => value === "" || value.replace(/\D/g, "").length >= 7,
+      "Enter a valid phone number.",
+    ),
   message: z.string().min(10, "Message must be at least 10 characters."),
 });
 
@@ -49,12 +54,12 @@ export function ContactSection() {
         <SectionHeading
           eyebrow="Contact"
           title="Got an app idea? Let's make it real."
-          description="Send the project context, timeline, target platforms, and integrations — I'll come back with a plan."
+          description="Tell me what you're building. I usually reply within 24 hours with a plan."
         />
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="glass-panel rounded-2xl p-6">
             <h3 className="font-display text-xl font-bold">Contact Details</h3>
-            <div className="mt-6 grid gap-4">
+            <div className="mt-4 grid gap-1">
               {[
                 [Mail, "Email", siteConfig.email, `mailto:${siteConfig.email}`],
                 [Phone, "Phone", siteConfig.phone, `tel:${siteConfig.phone}`],
@@ -65,7 +70,7 @@ export function ContactSection() {
                 <a
                   key={String(label)}
                   href={String(href)}
-                  className="flex items-center gap-4 rounded-2xl border border-border dark:border-white/10 bg-muted/40 dark:bg-white/[0.04] p-4 transition hover:border-primary/50"
+                  className="-mx-3 flex items-center gap-4 rounded-xl p-3 transition hover:bg-muted/60 dark:hover:bg-white/[0.04]"
                 >
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 dark:bg-primary/15 text-accent-ink">
                     <Icon className="h-5 w-5" />
@@ -80,9 +85,9 @@ export function ContactSection() {
               ))}
             </div>
             <Button asChild className="mt-6 w-full" variant="secondary">
-              <a href="https://cal.com" target="_blank" rel="noreferrer">
-                <Calendar className="h-4 w-4" />
-                Book a Call
+              <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer">
+                <MessageCircle className="h-4 w-4" />
+                Chat on WhatsApp
               </a>
             </Button>
           </div>
@@ -106,13 +111,13 @@ export function ContactSection() {
                   placeholder="you@example.com"
                 />
               </Field>
-              <Field label="Phone" error={errors.phone?.message}>
+              <Field label="Phone (optional)" error={errors.phone?.message}>
                 <input
                   {...register("phone")}
                   type="tel"
                   autoComplete="tel"
                   className="input"
-                  placeholder="+971 509050493"
+                  placeholder="+971 50 000 0000"
                 />
               </Field>
               <div className="hidden sm:block" />
@@ -162,7 +167,9 @@ function Field({
     <label className={className}>
       <span className="mb-2 block text-sm font-semibold">{label}</span>
       {children}
-      {error ? <span className="mt-2 block text-sm text-red-300">{error}</span> : null}
+      {error ? (
+        <span className="mt-2 block text-sm text-red-600 dark:text-red-300">{error}</span>
+      ) : null}
     </label>
   );
 }

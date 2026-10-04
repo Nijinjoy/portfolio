@@ -13,7 +13,7 @@ export function Footer() {
             Nijin Joy
           </a>
           <p className="mt-2 max-w-sm text-xs leading-6 text-muted-foreground">
-            {siteConfig.role} building React Native, React.js &amp; Vue.js products.
+            {siteConfig.role} building React Native, Next.js, Vue.js &amp; WordPress products.
           </p>
           <a
             href="#contact"
@@ -23,7 +23,7 @@ export function Footer() {
             <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
-        <div className="grid grid-cols-3 justify-items-center gap-2 sm:grid-cols-5 md:justify-items-center">
+        <div className="grid grid-cols-3 justify-items-center gap-2 sm:grid-cols-6 md:justify-items-center">
           {navItems.map((item) => (
             <a
               key={item.href}

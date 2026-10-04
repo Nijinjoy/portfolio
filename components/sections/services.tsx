@@ -16,12 +16,12 @@ export function ServicesSection() {
             return (
               <article
                 key={service.title}
-                className="glass-panel rounded-2xl p-6 transition hover:-translate-y-1"
+                className="glass-panel rounded-2xl p-6 transition hover:border-primary/50"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 dark:bg-primary/15 text-accent-ink">
+                <span className="text-accent-ink">
                   <Icon className="h-6 w-6" />
                 </span>
-                <h3 className="mt-5 font-display text-xl font-bold">{service.title}</h3>
+                <h3 className="mt-4 font-display text-lg font-bold">{service.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.text}</p>
               </article>
             );

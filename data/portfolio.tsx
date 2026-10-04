@@ -1,10 +1,15 @@
 import {
   SiAndroid,
+  SiAngular,
   SiExpo,
+  SiExpress,
   SiFirebase,
   SiGraphql,
   SiJavascript,
   SiJira,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
   SiPostman,
   SiReact,
   SiRedux,
@@ -13,9 +18,19 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVuedotjs,
+  SiWordpress,
   SiXcode,
 } from "react-icons/si";
-import { FaApple, FaAws, FaFigma, FaGitAlt, FaGithub, FaGoogle, FaHtml5, FaMeta } from "react-icons/fa6";
+import {
+  FaApple,
+  FaAws,
+  FaFigma,
+  FaGitAlt,
+  FaGithub,
+  FaGoogle,
+  FaHtml5,
+  FaMeta,
+} from "react-icons/fa6";
 import { Code2, Database, Layers, Smartphone, Workflow } from "lucide-react";
 import type { Project, SkillGroup } from "@/types/portfolio";
 
@@ -28,9 +43,8 @@ export const typingRoles = [
 ];
 
 export const stats = [
-  { value: "3+", label: "Years Experience" },
-  { value: "5", label: "Projects" },
-  { value: "12", label: "Technologies" },
+  { value: "3+", label: "Years shipping" },
+  { value: "5+", label: "Apps live on stores" },
 ];
 
 export const skillGroups: SkillGroup[] = [
@@ -38,7 +52,10 @@ export const skillGroups: SkillGroup[] = [
     title: "Frontend",
     skills: [
       { name: "React.js", level: 92, experience: "3+ years", icon: SiReact },
+      { name: "Next.js", level: 85, icon: SiNextdotjs },
       { name: "Vue.js", level: 78, experience: "1+ years", icon: SiVuedotjs },
+      { name: "Angular", level: 70, icon: SiAngular },
+      { name: "WordPress", level: 80, icon: SiWordpress },
       { name: "HTML", level: 95, experience: "3+ years", icon: FaHtml5 },
       { name: "CSS", level: 92, experience: "3+ years", icon: SiTailwindcss },
       { name: "Tailwind CSS", level: 90, experience: "2+ years", icon: SiTailwindcss },
@@ -52,6 +69,14 @@ export const skillGroups: SkillGroup[] = [
       { name: "React Native", level: 94, experience: "3+ years", icon: SiReact },
       { name: "Android", level: 84, experience: "3+ years", icon: SiAndroid },
       { name: "iOS", level: 80, experience: "2+ years", icon: FaApple },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Node.js", level: 75, icon: SiNodedotjs },
+      { name: "Express.js", level: 75, icon: SiExpress },
+      { name: "MongoDB", level: 75, icon: SiMongodb },
     ],
   },
   {
@@ -89,68 +114,82 @@ export const experiences = [
     position: "Software Engineer",
     duration: "Oct 2025 - Present",
     responsibilities: [
-      "Built and deployed 3+ production mobile and web apps with React Native and Vue.js.",
-      "Integrated Stripe and Botim Money for payments, and Twilio for phone-based OTP login.",
-      "Integrated react-native-maps for live location tracking, custom markers, and geolocation workflows.",
-      "Localized the app in Arabic and English using i18n.",
-      "Built offline sync to keep core workflows running without connectivity, reconciling once back online.",
-      "Architected state management with Redux Toolkit, RTK Query, and Redux-Saga.",
-      "Owned feature development through store release and production deployment.",
+      "Shipped 3+ production apps across mobile and web with React Native and Vue.js.",
+      "Wired up payments (Stripe, Botim Money) and phone OTP login (Twilio).",
+      "Built live maps, Arabic/English localization, and offline-first sync.",
+      "Designed state with Redux Toolkit, RTK Query, and Redux-Saga.",
     ],
     achievements: [
-      "Delivered an end-to-end mobile and web product independently, from build to release.",
-      "Simplified onboarding with secure phone-based OTP login, a sign-in flow users already trust and expect.",
-      "Tailored products for the UAE market with bilingual Arabic-English experiences and Botim Money, a widely used regional payment method.",
+      "Took a full mobile + web product from zero to the app stores solo.",
+      "Built for the UAE market: bilingual UI and local payments people already use.",
     ],
-    technologies: ["React Native", "Vue.js", "Redux Toolkit", "Redux-Saga", "react-native-maps", "Stripe", "Botim Money", "Twilio", "i18n", "Offline Sync", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
+    technologies: [
+      "React Native",
+      "Vue.js",
+      "Redux Toolkit",
+      "Stripe",
+      "Botim Money",
+      "Twilio",
+      "Maps",
+      "i18n",
+      "Offline Sync",
+    ],
   },
   {
     company: "Impetors Pvt Ltd, Bengaluru",
     position: "Mobile Application Developer",
     duration: "Apr 2024 - Jul 2025",
     responsibilities: [
-      "Developed production mobile applications for Android and iOS, including Blaze HR.",
-      "Built HRMS-focused mobile workflows with clean UI, reusable components, API integrations, and reliable release delivery.",
-      "Collaborated with product, backend, QA, and design teams to ship app-store-ready mobile features.",
+      "Built Blaze HR, a production HRMS app for Android and iOS.",
+      "Created reusable components and clean, API-driven HR workflows.",
+      "Shipped alongside product, backend, QA, and design teams.",
     ],
     achievements: [
-      "Published Blaze HR on both Google Play Store and Apple App Store.",
-      "Delivered mobile experiences for HR operations, employee self-service, and enterprise workflows.",
+      "Launched Blaze HR on Google Play and the App Store.",
+      "Put HR self-service in employees' pockets.",
     ],
     technologies: ["React Native", "TypeScript", "REST APIs", "HRMS", "Android", "iOS"],
   },
   {
     company: "Appstation Pvt Ltd",
     position: "Mobile App Developer",
-    duration: "May 2023 - 2024",
+    duration: "May 2023 - Mar 2024",
     responsibilities: [
-      "Built hospitality apps and a sports app for a Qatar-based client.",
-      "Added multi-language support with language translation across every screen.",
-      "Implemented secure, seamless authentication flows.",
-      "Integrated push notifications to keep users engaged and informed.",
-      "Deployed and released apps to the Google Play Store and Apple App Store.",
+      "Built hospitality and sports apps for a Qatar-based client.",
+      "Added multi-language support, secure auth, and push notifications.",
+      "Released to Google Play and the App Store.",
     ],
     achievements: [
-      "Delivered hospitality and sports apps for a Qatar client, from build to store release.",
-      "Launched multi-language apps with secure authentication and push notifications on both Google Play Store and Apple App Store.",
-      "Improved crash-free sessions by tightening error handling and release QA checklists.",
+      "Took client apps from build to store release on both platforms.",
+      "Raised crash-free sessions with better error handling and release QA.",
     ],
-    technologies: ["React Native", "React.js", "REST APIs", "SQLite", "Firebase", "i18n", "Push Notifications", "Authentication", "Play Store", "App Store"],
+    technologies: ["React Native", "React.js", "Firebase", "SQLite", "i18n", "Push Notifications"],
   },
-];
-
-export const projectCategories = [
-  "All",
-  "React Native",
-  "React.js",
-  "HRMS",
-  "CRM",
-  "Sports",
-  "Restaurant POS",
-  "Finance",
-  "E-Commerce",
-  "Portfolio",
-  "Task Management",
+  {
+    company: "Luminar Technolab, Kerala",
+    position: "Full Stack Developer Intern (MEARN)",
+    duration: "Aug 2022 - Apr 2023",
+    responsibilities: [
+      "Trained in full-stack web development on the MEARN stack: MongoDB, Express, Angular, React, and Node.js.",
+      "Built several projects end to end, from REST APIs and databases to responsive UIs.",
+      "Used Git for version control on every project.",
+    ],
+    achievements: [
+      "Delivered multiple full-stack projects in Angular and React.",
+      "Built the full-stack foundation behind my mobile and web work today.",
+    ],
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "Angular",
+      "React.js",
+      "Node.js",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Git",
+    ],
+  },
 ];
 
 export const projects: Project[] = [
@@ -158,7 +197,7 @@ export const projects: Project[] = [
     title: "Blaze HR",
     category: "HRMS",
     description:
-      "A production HRMS mobile application developed at Impetors Pvt Ltd, Bengaluru and published on Android and iOS.",
+      "HR in your pocket: employee self-service and HR workflows. Live on Android and iOS.",
     image: "/images/blaze-hr-app.png",
     techStack: ["React Native", "TypeScript", "REST APIs", "HRMS", "Android", "iOS"],
     features: [
@@ -195,9 +234,18 @@ export const projects: Project[] = [
     title: "ADD-POS",
     category: "Restaurant POS",
     description:
-      "A React Native restaurant POS billing application with three dedicated user roles — billing, kitchen, and customer display — published on Google Play with offline sync, Botim Money payments, and multi-language support.",
+      "Restaurant POS with billing, kitchen, and customer-display modes. Billing keeps working when the Wi-Fi drops.",
     image: "/images/addon-s-pos.png",
-    techStack: ["React Native", "Mobile App", "Tablet App", "Restaurant POS", "Offline Sync", "Botim Money", "i18n", "Android"],
+    techStack: [
+      "React Native",
+      "Mobile App",
+      "Tablet App",
+      "Restaurant POS",
+      "Offline Sync",
+      "Botim Money",
+      "i18n",
+      "Android",
+    ],
     features: [
       "Billing user role",
       "Kitchen user role",
@@ -208,7 +256,8 @@ export const projects: Project[] = [
       "Multi-language support with i18n",
     ],
     links: {
-      playStore: "https://play.google.com/store/apps/details?id=com.addonsposapp&pcampaignid=web_share",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.addonsposapp&pcampaignid=web_share",
       caseStudy: "#",
     },
     details: {
@@ -230,13 +279,24 @@ export const projects: Project[] = [
         "Play Store release",
       ],
     },
-  },  {
+  },
+  {
     title: "Addon-s",
     category: "CRM",
     description:
-      "An HR and CRM mobile and web application independently built and deployed for ADDONS TECHNOLOGIES LLC, Dubai — React Native apps on Android and iOS, plus a Vue.js web interface.",
+      "HR + CRM suite for a Dubai company, built solo: React Native apps plus a Vue.js web app.",
     image: "/images/addons-app.png",
-    techStack: ["React Native", "Vue.js", "Stripe", "Twilio", "HRMS", "CRM", "REST APIs", "Android", "iOS"],
+    techStack: [
+      "React Native",
+      "Vue.js",
+      "Stripe",
+      "Twilio",
+      "HRMS",
+      "CRM",
+      "REST APIs",
+      "Android",
+      "iOS",
+    ],
     features: [
       "HR workflows",
       "CRM workflows",
@@ -277,40 +337,41 @@ export const projects: Project[] = [
     title: "Buy In Minutes",
     category: "E-Commerce",
     description:
-      "An independently developed React Native mobile commerce project currently under development for a company, focused on fast buying flows and mobile-first customer experience.",
+      "Multi-store marketplace where you browse to checkout in minutes. Web store is live; mobile app in development.",
     image: "/images/buy-in-minutes.jpeg",
     imageFit: "contain",
-    techStack: ["React Native", "Mobile App", "E-Commerce", "REST APIs", "Android", "iOS"],
+    techStack: ["Vue.js", "Frappe", "React Native", "E-Commerce", "Online Payments", "OTP Login"],
     features: [
-      "Fast purchase flows",
-      "Product browsing",
-      "Mobile commerce experience",
-      "Independent development in progress",
+      "Browse by store, brand, category, and supplier",
+      "Cart and wishlist",
+      "OTP login",
+      "Online payments",
+      "Order history and tracking",
     ],
-    links: { caseStudy: "#" },
+    links: { demo: "https://buyinminutes.u.frappe.cloud/#/" },
     details: {
       architecture:
-        "React Native app structure with reusable screens, commerce-focused modules, API-connected product flows, and production-oriented mobile navigation.",
+        "Vue.js single-page storefront on a Frappe backend, with routes for stores, brands, categories, suppliers, products, cart, wishlist, orders, and payments. A React Native app shares the same APIs.",
       challenges:
-        "Developing the product independently while aligning company requirements with a smooth, fast shopping experience.",
+        "Building a marketplace with many ways to find a product (store, brand, category, supplier) while keeping checkout to a few steps.",
       solutions:
-        "Built reusable React Native components, structured the buying flow around quick user actions, and prepared the app foundation for scalable company use.",
+        "Built reusable Vue components and API-driven catalog pages, OTP login, a cart and wishlist, online payments with success and cancel handling, and order history.",
       performance:
-        "Currently focused on responsive screens, efficient navigation, and lightweight interactions for fast mobile ordering.",
+        "Fast client-side navigation, lightweight pages, and a short path from product page to paid order.",
       contributions: [
-        "Independent development",
-        "React Native implementation",
-        "E-commerce flows",
-        "Mobile UI",
-        "Company product development",
+        "Vue.js storefront",
+        "Frappe API integration",
+        "Cart, wishlist, and checkout",
+        "OTP login",
+        "Payment flow",
+        "React Native app (in progress)",
       ],
     },
   },
   {
     title: "Bsporty",
     category: "Sports",
-    description:
-      "A sports booking and accessories mobile app published on Google Play as a one-stop solution for ground booking and sports accessories.",
+    description: "Book a ground and grab your gear in one app. Live on Google Play.",
     image: "/images/bsporty.jpeg",
     techStack: ["Mobile App", "Sports Booking", "E-Commerce", "Android", "Google Play"],
     features: [
@@ -342,15 +403,34 @@ export const projects: Project[] = [
       ],
     },
   },
-
 ];
 
 export const services = [
-  { title: "React Native Development", icon: Smartphone, text: "Production mobile apps with clean TypeScript, native integrations, and scalable state." },
-  { title: "React.js Development", icon: SiReact, text: "Modern dashboards, admin portals, landing pages, and product frontends." },
-  { title: "Cross Platform Development", icon: Layers, text: "Shared business logic, consistent UI systems, and reliable Android/iOS delivery." },
-  { title: "API & Firebase Integration", icon: SiFirebase, text: "REST, GraphQL, auth, Firestore, push notifications, analytics, and cloud workflows." },
-  { title: "App Optimization", icon: Workflow, text: "Performance audits, bug fixing, maintainability improvements, and release hardening." },
+  {
+    title: "Mobile Apps",
+    icon: Smartphone,
+    text: "One React Native codebase that feels native on Android and iOS, shipped all the way to the stores.",
+  },
+  {
+    title: "Web Apps",
+    icon: SiReact,
+    text: "Dashboards, portals, and fast websites in React, Next.js, or Vue, plus WordPress sites you can edit yourself.",
+  },
+  {
+    title: "Cross-Platform Delivery",
+    icon: Layers,
+    text: "Shared logic and one consistent UI, so mobile, tablet, and web stay in step.",
+  },
+  {
+    title: "Integrations",
+    icon: SiFirebase,
+    text: "Payments, maps, OTP login, push notifications, Firebase, and your APIs.",
+  },
+  {
+    title: "Rescue & Optimize",
+    icon: Workflow,
+    text: "Slow, crashy, or stuck? I find the bottleneck, fix it, and harden the release.",
+  },
 ];
 
 export const certifications = [
@@ -366,7 +446,9 @@ export const certifications = [
 export const techStack = [
   "React",
   "React Native",
+  "Next.js",
   "Vue.js",
+  "WordPress",
   "TypeScript",
   "JavaScript",
   "Redux",

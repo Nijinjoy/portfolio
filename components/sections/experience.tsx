@@ -33,7 +33,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="section">
       <div className="container-premium">
-        <SectionHeading eyebrow="Experience" title="Three years, three teams, shipped products." />
+        <SectionHeading eyebrow="Experience" title="3+ years of shipping real products." />
 
         <div className="grid gap-6 lg:grid-cols-[18rem_1fr]">
           <div
@@ -134,11 +134,9 @@ export function ExperienceSection() {
                     </h4>
                     <ul className="space-y-3 text-sm leading-relaxed">
                       {active.achievements.map((point) => (
-                        <li
-                          key={point}
-                          className="rounded-xl border border-primary/20 bg-primary/5 p-3 text-foreground dark:bg-primary/10"
-                        >
-                          {point}
+                        <li key={point} className="flex gap-3 text-foreground">
+                          <span className="mt-0.5 font-bold text-accent-ink">→</span>
+                          <span>{point}</span>
                         </li>
                       ))}
                     </ul>
