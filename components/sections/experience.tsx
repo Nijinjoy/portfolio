@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, type KeyboardEvent } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Briefcase, CalendarDays, MapPin, Trophy } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { SectionHeading } from "@/components/common/section-heading";
 import { experiences } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
@@ -13,147 +13,91 @@ function splitCompany(company: string) {
 }
 
 export function ExperienceSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const active = experiences[activeIndex];
-  const { name, location } = splitCompany(active.company);
-
-  const onKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    const last = experiences.length - 1;
-    let next = activeIndex;
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") next = activeIndex === last ? 0 : activeIndex + 1;
-    else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = activeIndex === 0 ? last : activeIndex - 1;
-    else if (event.key === "Home") next = 0;
-    else if (event.key === "End") next = last;
-    else return;
-    event.preventDefault();
-    setActiveIndex(next);
-    document.getElementById(`experience-tab-${next}`)?.focus();
-  };
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section id="experience" className="section">
       <div className="container-premium">
         <SectionHeading eyebrow="Experience" title="3+ years of shipping real products." />
 
-        <div className="grid gap-6 lg:grid-cols-[18rem_1fr]">
-          <div
-            role="tablist"
-            aria-label="Work experience"
-            aria-orientation="vertical"
-            className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0 lg:flex-col lg:overflow-visible lg:pb-0"
-          >
-            {experiences.map((item, index) => {
-              const isActive = index === activeIndex;
-              const company = splitCompany(item.company);
-              return (
-                <button
-                  key={item.company}
-                  id={`experience-tab-${index}`}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  aria-controls="experience-panel"
-                  tabIndex={isActive ? 0 : -1}
-                  onClick={() => setActiveIndex(index)}
-                  onKeyDown={onKeyDown}
-                  className={cn(
-                    "focus-ring relative min-w-[14rem] flex-none rounded-2xl border p-4 text-left transition lg:min-w-0",
-                    isActive
-                      ? "border-primary/60 bg-primary/10 shadow-card dark:shadow-none"
-                      : "glass-panel hover:border-primary/40",
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "absolute inset-y-4 left-0 hidden w-1 rounded-r-full bg-primary transition-opacity lg:block",
-                      isActive ? "opacity-100" : "opacity-0",
-                    )}
-                  />
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-accent-ink">
-                    {item.duration}
-                  </span>
-                  <span className="mt-1 block font-display text-base font-bold">{company.name}</span>
-                  <span className="mt-0.5 block text-sm text-muted-foreground">{item.position}</span>
-                </button>
-              );
-            })}
-          </div>
+        <ul className="border-t border-border dark:border-white/10">
+          {experiences.map((item, index) => {
+            const isOpen = openIndex === index;
+            const { name, location } = splitCompany(item.company);
+            const panelId = `experience-panel-${index}`;
 
-          <div
-            id="experience-panel"
-            role="tabpanel"
-            aria-labelledby={`experience-tab-${activeIndex}`}
-            className="glass-panel min-h-[24rem] rounded-3xl p-6 sm:p-8"
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-6 dark:border-white/10">
-                  <div>
-                    <h3 className="font-display text-2xl font-bold">{active.position}</h3>
-                    <p className="mt-1 text-base font-semibold text-accent-ink">{name}</p>
-                  </div>
-                  <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:items-end">
-                    <span className="inline-flex items-center gap-2">
-                      <CalendarDays className="h-4 w-4 text-accent-ink" />
-                      {active.duration}
-                    </span>
-                    {location ? (
-                      <span className="inline-flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-accent-ink" />
-                        {location}
+            return (
+              <li key={item.company} className="border-b border-border dark:border-white/10">
+                <h3>
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="focus-ring group flex w-full items-start gap-4 py-6 text-left sm:items-center"
+                  >
+                    <ChevronDown
+                      className={cn(
+                        "mt-1 h-5 w-5 flex-none text-muted-foreground transition-transform duration-200 group-hover:text-foreground sm:mt-0",
+                        isOpen ? "rotate-0 text-accent-ink" : "-rotate-90",
+                      )}
+                    />
+                    <span className="flex flex-1 flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                      <span>
+                        <span className="block font-display text-lg font-bold sm:text-xl">
+                          {item.position}
+                        </span>
+                        <span className="mt-0.5 block text-sm text-muted-foreground">
+                          {name}
+                          {location ? ` · ${location}` : null}
+                        </span>
                       </span>
-                    ) : null}
-                  </div>
-                </div>
-
-                <div className="mt-6 grid gap-8 md:grid-cols-2">
-                  <div>
-                    <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-                      <Briefcase className="h-4 w-4 text-accent-ink" />
-                      What I did
-                    </h4>
-                    <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
-                      {active.responsibilities.map((point) => (
-                        <li key={point} className="flex gap-3">
-                          <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary/60" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-                      <Trophy className="h-4 w-4 text-accent-ink" />
-                      Highlights
-                    </h4>
-                    <ul className="space-y-3 text-sm leading-relaxed">
-                      {active.achievements.map((point) => (
-                        <li key={point} className="flex gap-3 text-foreground">
-                          <span className="mt-0.5 font-bold text-accent-ink">→</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6 dark:border-white/10">
-                  {active.technologies.map((tech) => (
-                    <span key={tech} className="chip-accent">
-                      {tech}
+                      <span className="flex-none text-sm font-medium text-muted-foreground sm:text-right">
+                        {item.duration}
+                      </span>
                     </span>
-                  ))}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
+                  </button>
+                </h3>
+
+                <AnimatePresence initial={false}>
+                  {isOpen ? (
+                    <motion.div
+                      id={panelId}
+                      key="panel"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-8 pl-9">
+                        <ul className="space-y-2 text-sm leading-relaxed text-foreground sm:text-base">
+                          {item.achievements.map((point) => (
+                            <li key={point} className="flex gap-3">
+                              <span className="font-bold text-accent-ink">→</span>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                          {item.responsibilities.map((point) => (
+                            <li key={point} className="flex gap-3">
+                              <span className="mt-2 h-1 w-1 flex-none rounded-full bg-muted-foreground/60" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-5 text-xs font-medium text-muted-foreground">
+                          {item.technologies.join(" · ")}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );
