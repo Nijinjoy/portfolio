@@ -337,7 +337,7 @@ export const projects: Project[] = [
     title: "Buy In Minutes",
     category: "E-Commerce",
     description:
-      "Multi-store marketplace where you browse to checkout in minutes. Web store is live; mobile app in development.",
+      "Multi-store marketplace where you browse to checkout in minutes. Live on the web and Google Play.",
     image: "/images/buy-in-minutes.jpeg",
     imageFit: "contain",
     techStack: ["Vue.js", "Frappe", "React Native", "E-Commerce", "Online Payments", "OTP Login"],
@@ -348,7 +348,11 @@ export const projects: Project[] = [
       "Online payments",
       "Order history and tracking",
     ],
-    links: { demo: "https://buyinminutes.u.frappe.cloud/#/" },
+    links: {
+      demo: "https://buyinminutes.u.frappe.cloud/#/",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.addons.buyinminutes&pcampaignid=web_share",
+    },
     details: {
       architecture:
         "Vue.js single-page storefront on a Frappe backend, with routes for stores, brands, categories, suppliers, products, cart, wishlist, orders, and payments. A React Native app shares the same APIs.",
@@ -364,7 +368,8 @@ export const projects: Project[] = [
         "Cart, wishlist, and checkout",
         "OTP login",
         "Payment flow",
-        "React Native app (in progress)",
+        "React Native app",
+        "Play Store release",
       ],
     },
   },
